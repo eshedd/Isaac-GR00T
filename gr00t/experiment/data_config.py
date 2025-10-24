@@ -271,6 +271,18 @@ class So100DualCamDataConfig(So100DataConfig):
     action_indices = list(range(16))
 
 
+##########################################################################################
+
+
+class So100DualArmTriadCamDataConfig(So100DataConfig):
+    video_keys = ["video.top", "video.right", "video.left"]
+    state_keys = ["state.right_arm", "state.right_gripper", "state.left_arm", "state.left_gripper"]
+    action_keys = ["action.right_arm", "action.right_gripper", "action.left_arm", "action.left_gripper"]
+    language_keys = ["annotation.human.task_description"]
+    observation_indices = [0]
+    action_indices = list(range(16))
+
+
 ###########################################################################################
 
 
@@ -785,4 +797,5 @@ DATA_CONFIG_MAP = {
     "unitree_g1_full_body": UnitreeG1FullBodyDataConfig(),
     "oxe_droid": OxeDroidDataConfig(),
     "agibot_genie1": AgibotGenie1DataConfig(),
+    "so100_dual_arm_triadcam": So100DualArmTriadCamDataConfig()
 }
