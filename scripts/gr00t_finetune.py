@@ -13,6 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import warnings
+warnings.filterwarnings(
+    "ignore",
+    message="The video decoding and encoding capabilities of torchvision are deprecated"
+)
 import os
 import subprocess
 import sys
